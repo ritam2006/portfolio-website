@@ -7,6 +7,9 @@ module.exports = {
         instagram: '#e1306c',
         linkedin: '#0077b5',
         github: '#6e5494'
+      },
+      spacing: {
+        '128': '32rem',
       }
     },
   },

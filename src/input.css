@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .cover-image {
+        @apply hidden
+    }
+
+    .project {
+        @apply w-128 flex flex-col gap-4 items-center text-2xl border-white border-2 p-2 rounded-lg
+    }
+
+    .project p {
+        @apply border-white border-b-2
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 0.5s;
+    }
+      
+    @keyframes fade {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+}
