@@ -7,79 +7,136 @@
   <script src="./script.js" defer></script>
   <script src="https://kit.fontawesome.com/071fe13fd0.js" crossorigin="anonymous"></script>
 </head>
-<body class="font-serif bg-black text-white flex flex-col items-center gap-4">
-    <nav class="sticky w-screen flex justify-between p-4 bg-gray-800 text-3xl">
-        <a href="index.html">Ritam Chakraborty</a>
+<body class="font-serif bg-black text-white overflow-x-hidden">
+    <nav class="sticky top-0 z-50 flex justify-between p-4 bg-secondary border-white border-b-2 text-3xl">
+        <div class="space-x-2">
+            <a href="#">Home</a>
+            <a href="#about-me">About Me</a>
+            <a href="#projects">Projects</a>
+        </div>
         <div class="space-x-2">
             <a class="fa-brands fa-instagram hover:text-instagram" target="_blank" href="https://www.instagram.com/ritamz.ico/"></a>
             <a class="fa-brands fa-linkedin hover:text-linkedin" target="_blank" href="https://www.linkedin.com/in/ritam-chakraborty-575204323/"></a>
             <a class="fa-brands fa-github hover:text-github" target="_blank" href="https://github.com/ritam2006"></a>
         </div>
     </nav>
-    <div class="flex w-fit p-4 border-white border-2">
-        <div class="flex text-4xl items-center">
-            <a class="fa-solid fa-angle-left px-5 cursor-pointer" onclick="move_slide(-1)"></a>
-            <div class="w-80" id="carousel">
-                <img class="cover-image fade" src="../lib/img/ritam-1.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-2.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-3.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-4.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-5.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-6.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-7.jpg" alt="">
-                <img class="cover-image fade" src="../lib/img/ritam-8.jpg" alt="">
-            </div>
-            <a class="fa-solid fa-angle-right px-5 cursor-pointer" onclick="move_slide(1)"></a>
+    <div id="rain-container" class="fixed w-screen h-screen"></div>
+    <div id="main-content" class="relative flex flex-col items-center gap-256">
+        <div class="text-8xl text-center m-56">
+            <p id="something" class="p-10 block title-text">Something's off...</p>
+            <p id="better" class="hidden p-10 title-text">That's better</p>
+            <p id="full-name" class="hidden p-10 title-text">Ritam Chakraborty</p>
         </div>
-    <div class="flex flex-col w-128 p-4 gap-2">
-        <p class="text-3xl">About Me</p>
-        <p class="text-lg">Hi, I'm Ritam! I am a college student in the Bay Area who is interested
-            in data science and full-stack development.
-        </p>
-        <ul class="list-disc list-inside">
-            <p>Education & Skills</p>
-            <li>
-                <i class="fa-solid fa-graduation-cap"></i> 
-                Data Science @ University of California, Berkeley
-            </li>
-            <li>
-                <i class="fa-solid fa-code"></i>
-                Python, Java, Javascript, HTML, CSS, Dart
-            </li>
-            <li>
-                <i class="fa-solid fa-brain"></i>
-                Frontend, Backend, Data Analysis, Machine Learning
-            </li>
-            <p class="mt-2">Fun Stuff</p> 
-            <li>
-                <i class="fa-solid fa-chess-pawn"></i>
-                I play chess (2150 chess.com, 1850 USCF, 1750 FIDE)
-            </li>
-            <li>
-                <i class="fa-solid fa-music"></i>
-                Top 3 Songs: Purple Rain, Ex-Factor, A Milli
-            </li>       
-        </ul>
-    </div>
-    </div>
-    <div class="text-center">
-        <p class="text-6xl mb-4">Projects</p>
-        <div class="grid grid-cols-2 gap-8">
-            <div class="project">
-                <p>California House Price Prediction</p>
-                <img class="w-80" src="../lib/img/ritam-1.jpg" alt="">
+        <div id="about-me-div" class="section left-slide">
+            <div id="about-me" class="section-hash"></div>
+            <h1 class="section-title">About Me</h1>
+            <div class="flex gap-4">
+                <div class="relative flex text-4xl items-center border-white border-2 rounded-lg">
+                    <p id="cover-index-display" class="absolute bottom-0 left-1/2 -translate-x-1/2 
+                        text-lg w-20 bg-secondary border-white border-2 border-b-0 p-2">1/3</p>
+                    <a id="move-left" class="shift-image-btn" onclick="move_slide(-1)">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                        <div class="w-80" id="carousel">
+                            <img class="cover-image fade" src="../lib/img/ritam-1.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-2.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-3.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-4.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-5.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-6.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-7.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/ritam-8.jpg" alt="">
+                        </div>
+                    <a id="move-right" class="shift-image-btn" onclick="move_slide(1)">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="flex flex-col w-128 p-4 gap-2 text-left">
+                    <p class="text-3xl">This is Ritam</p>
+                    <p class="text-lg">Hi, I'm Ritam! I am a college student in the Bay Area who is interested
+                        in data science and full-stack development.
+                    </p>
+                    <ul class="list-disc list-inside">
+                        <p>Education & Skills</p>
+                        <li>
+                            <i class="fa-solid fa-graduation-cap"></i> 
+                            Data Science @ 
+                            <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg">UC Berkeley</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-code"></i>
+                            Python, Java, Javascript, HTML, CSS, Dart
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-brain"></i>
+                            Frontend, Backend, Data Analysis, Machine Learning
+                        </li>
+                        <p class="mt-2">Fun Stuff</p> 
+                        <li>
+                            <i class="fa-solid fa-chess-pawn"></i>
+                            I play chess (2150 chess.com, 1850 USCF, 1750 FIDE)
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-music"></i>
+                            Top 3 Songs: Purple Rain, Ex-Factor, A Milli
+                        </li>       
+                    </ul>
+                </div>
             </div>
-            <div class="project">
-                <p>X (Twitter) Hate Speech Detection</p>
-                <img class="w-80" src="../lib/img/ritam-1.jpg" alt="">
-            </div>
-            <div class="project">
-                <p>R<sup>2</sup> Visualizer</p>
-                <img class="w-80" src="../lib/img/ritam-1.jpg" alt="">
-            </div>
-            <div class="project">
-                <p>Uno</p>
-                <img class="w-80" src="../lib/img/ritam-1.jpg" alt="">
+        </div>
+        <div id="project-div" class="section right-slide">
+            <div id="projects" class="section-hash"></div>
+            <h1 class="section-title">Projects</h1>
+            <div class="grid grid-cols-2 gap-8">
+                <a target="_blank" href="https://github.com/ritam2006/California-Housing-Price-Prediction">
+                    <div class="project">
+                        <p class="project-title">California House Price Prediction</p>
+                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <p class="project-description">
+                            I created a hyperparamater tuned Random Forest model that 
+                            was trained on over 20,000 houses to predict housing price 
+                            in California. I developed a website using Flask to allow
+                            anyone with an internet connection to input their housing
+                            data and recieve the model's predictions.
+                        </p>
+                    </div>
+                </a>
+                <a target="_blank" href="https://www.youtube.com/watch?v=WePNs-G7puA">
+                    <div class="project">
+                        <p class="project-title">X (Twitter) Hate Speech Detection</p>
+                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <p class="project-description">
+                            I used Tensorflow to make a neural network to detect whether
+                            X posts should be removed for containing hate speech. I executed
+                            a sentiment analysis on over 32,000 posts. Finally, I contrasted
+                            this deep learning approach with a logistic regression model.
+                        </p>
+                    </div>
+                </a>
+                <a target="_blank" href="https://iams.skparab1.com/">
+                    <div class="project">
+                        <p class="project-title">R<sup>2</sup> Visualizer</p>
+                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <p class="project-description">
+                            I helped develop an educational website that demonstrates
+                            the calculation for R squared in statistics. I made
+                            the user interface and enabled users to plot points on 
+                            a plane that could be used as data for linear regression.
+                        </p>
+                    </div>
+                </a>
+                <a target="_blank" href="https://github.com/ritam2006/Uno">
+                    <div class="project">
+                        <p class="project-title">Uno</p>
+                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <p class="project-description">
+                            I remade the card game Uno in Java with a GUI, game mechanics,
+                            and custom animations. I constructed a local server from scratch 
+                            as well as a client handler to allow nearby users to join a single 
+                            game from seperate systems.
+                        </p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

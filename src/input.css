@@ -3,25 +3,94 @@
 @tailwind utilities;
 
 @layer components {
+    html {
+        @apply scroll-smooth
+    }
+
     .cover-image {
         @apply hidden
     }
 
+    .shift-image-btn {
+        @apply px-5 cursor-pointer h-full flex items-center
+        transition-all duration-200
+    }
+
+    .shift-image-btn:hover {
+        @apply bg-primary 
+    }
+
+    .title-text {
+        @apply bg-secondary border-white border-2 rounded-lg
+    }
+
+    .section {
+        @apply relative inline-block text-center hidden opacity-0 p-4 bg-secondary 
+        border-white border-2 rounded-lg
+    }
+
+    .left-slide {
+        @apply translate-x-full transition-all duration-500
+    }
+
+    .right-slide {
+        @apply -translate-x-full transition-all duration-500
+    }
+
+    .show {
+        @apply opacity-100 translate-x-0
+    }
+
+    .section-title {
+        @apply text-6xl w-full border-white border-2 rounded-lg mb-4 p-4
+    }
+
+    .section-hash {
+        @apply absolute -top-36 h-36
+    }
+
     .project {
-        @apply w-128 flex flex-col gap-4 items-center text-2xl border-white border-2 p-2 rounded-lg
+        @apply max-w-128 flex flex-col items-center text-2xl 
+        border-white border-2 rounded-lg relative z-10
     }
 
-    .project p {
-        @apply border-white border-b-2
+    .project:hover {
+        @apply cursor-pointer border-primary
+        transition-all duration-200
     }
 
-    .fade {
-        animation-name: fade;
-        animation-duration: 0.5s;
+    .project:hover .project-title {
+        @apply bg-primary    
     }
-      
-    @keyframes fade {
-        from {opacity: 0}
-        to {opacity: 1}
+
+    .project:hover .project-description {
+        @apply opacity-100
+    }
+
+    .project-title {
+        @apply w-full border-b-2 text-3xl p-4
+        transition-all duration-200
+    }
+
+    .project-description {
+        @apply text-lg p-4 absolute bottom-0
+        bg-secondary opacity-0 transition-opacity 
+        duration-200
+    }
+
+    .rain {
+        position: absolute;
+        background-color: #9614d0;
+        width: 2px;
+        height: 50px;
+        animation: animate-rain 0.5s linear infinite;
+    }
+
+    @keyframes animate-rain {
+        0% {transform: translateY(-50px);}
+        100% {
+            transform: translateY(calc(100vh + 50px)); 
+            opacity: 0;
+        }
     }
 }
