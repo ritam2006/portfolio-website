@@ -14,12 +14,6 @@
         @apply absolute bg-primary h-16 animate-rain
     }
 
-    /* Intro Text */
-
-    .title-text {
-        @apply bg-secondary border-2 rounded-lg p-10 shadow-highlight
-    }
-
     #full-name-text {
         text-shadow: 0.05em 0 0 red, 
         -0.025em -0.05em 0 green, 
@@ -31,7 +25,7 @@
     /* Sections */
 
     .section {
-        @apply relative text-center hidden p-4 bg-secondary 
+        @apply relative text-center p-4 bg-secondary 
         border-2 rounded-lg shadow-highlight opacity-0
     }
 
@@ -41,7 +35,7 @@
         0.025em 0.05em 0 blue,
         0 0 2rem white;
         @apply text-6xl w-full border-primary border-2 rounded-lg 
-        mb-4 p-4 shadow-primary
+        mb-4 p-4 shadow-primary select-none
     }
 
     .glitch {

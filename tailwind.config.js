@@ -7,12 +7,8 @@ module.exports = {
         primary: '#9614d0',
         secondary: '#11001c',
         highlight: '#ff10f0',
-        instagram: '#e1306c',
-        linkedin: '#0077b5',
-        github: '#24292e',
         berkeley_blue: '#002676',
         cali_gold: '#fdb515',
-        bruh: '#00ff00'
       },
       spacing: {
         '128': '32rem',
@@ -38,7 +34,7 @@ module.exports = {
         }
       },
       animation: {
-        'rain': 'rain 0.5s linear infinite',
+        'rain': 'rain 0.75s linear infinite',
         'flicker': 'flicker 3s infinite' 
       },
       boxShadow: {

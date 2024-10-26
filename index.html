@@ -9,8 +9,8 @@
 </head>
 <body class="bg-black text-white overflow-x-hidden">
     <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4 bg-secondary 
-        border-b-2 text-3xl border-primary shadow-primary">
-        <div class="space-x-2 text-2xl">
+        border-b-2 text-3xl border-primary shadow-primary select-none">
+        <div class="space-x-4 text-2xl">
             <a href="#">Home</a>
             <a href="#about-me">About Me</a>
             <a href="#experience">Experience</a>
@@ -18,26 +18,25 @@
             <a href="#contact-me">Contact Me</a>
         </div>
         <div class="space-x-2">
-            <a class="fa-brands fa-instagram hover:text-instagram" target="_blank" 
+            <a class="fa-brands fa-instagram" target="_blank" 
                 href="https://www.instagram.com/ritamz.ico/"></a>
-            <a class="fa-brands fa-linkedin hover:text-linkedin" target="_blank" 
+            <a class="fa-brands fa-linkedin" target="_blank" 
                 href="https://www.linkedin.com/in/ritam-chakraborty-575204323/"></a>
-            <a class="fa-brands fa-github hover:text-github" target="_blank" 
+            <a class="fa-brands fa-github" target="_blank" 
                 href="https://github.com/ritam2006"></a>
         </div>
     </nav>
     <div id="rain-container" class="fixed w-screen h-screen -z-20"></div>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
-        <div id="line" class="hidden absolute border-x-2 w-40 h-full -z-10 
+        <div id="line" class="absolute border-x-2 w-40 h-full -z-10 
             bg-secondary shadow-highlight">
             <div id="line-deco" class="absolute w-1/6 h-full left-1/2 -translate-x-1/2 
                 bg-highlight blur-md shadow-highlight"></div>
         </div>
         <div class="text-7xl text-center m-56">
-            <p id="something" class="block title-text">Something's off...</p>
-            <p id="better" class="hidden title-text">That's better</p>
-            <div id="full-name" class="hidden title-text">
-                <p id="full-name-text">Ritam Chakraborty</p>
+            <div id="full-name" class="bg-secondary border-2 rounded-lg p-10 
+                shadow-highlight">
+                <p id="full-name-text" class="animate-flicker select-none">Ritam Chakraborty</p>
             </div>
         </div>
         <div id="about-me-div" class="section left-slide">
@@ -250,8 +249,7 @@
                         placeholder="Your Email" required>
                     </div>
                     <textarea class="form-area" name="message" placeholder="Your Message" 
-                        required>
-                    </textarea>
+                        required></textarea>
                     <button id="submit-contact" class="text-2xl rounded-lg p-2 border-2 
                         transition-all duration-200 hover:bg-primary border-primary: 
                         bg-secondary border-primary" type="submit">
@@ -262,9 +260,6 @@
         </div>
         <div class="section w-full rounded-none border-0 border-t-2 animate-none">
             <h1 class="section-title">Special Thanks</h1>
-            <p class="text-3xl">Special thanks to <a href="">@prod_agp</a> 
-                for the background music!
-            </p>
         </div>
     </div>
 </body>
