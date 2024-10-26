@@ -667,7 +667,19 @@ video {
         0.025em 0.05em 0 blue,
         0 0 2rem white;
   margin-bottom: 1rem;
-  width: 100%
+  width: 100%;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(150 20 208 / var(--tw-border-opacity));
+  padding: 1rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  --tw-shadow: 0 0 4rem #9614d0;
+  --tw-shadow-colored: 0 0 4rem var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #9614d0;
+  --tw-shadow: var(--tw-shadow-colored)
 }
 
 @keyframes flicker{
@@ -700,20 +712,8 @@ video {
   }
 }
 
-.section-title{
+.glitch{
   animation: flicker 3s infinite;
-  border-radius: 0.5rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(150 20 208 / var(--tw-border-opacity));
-  padding: 1rem;
-  font-size: 3.75rem;
-  line-height: 1;
-  --tw-shadow: 0 0 4rem #9614d0;
-  --tw-shadow-colored: 0 0 4rem var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  --tw-shadow-color: #9614d0;
-  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .left-slide{
@@ -1042,6 +1042,10 @@ video {
 
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
