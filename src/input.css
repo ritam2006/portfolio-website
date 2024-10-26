@@ -1,32 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    html {
-        @apply scroll-smooth
+    * {
+        text-shadow: 0 0 2rem white;
+        @apply border-highlight font-poppins scroll-smooth
     }
 
-    .cover-image {
-        @apply hidden
+    .rain {
+        @apply absolute bg-primary h-16 animate-rain
     }
 
-    .shift-image-btn {
-        @apply px-5 cursor-pointer h-full flex items-center
-        transition-all duration-200
-    }
-
-    .shift-image-btn:hover {
-        @apply bg-primary 
-    }
+    /* Intro Text */
 
     .title-text {
-        @apply bg-secondary border-white border-2 rounded-lg
+        @apply bg-secondary border-2 rounded-lg p-10 shadow-highlight
     }
 
+    #full-name-text {
+        text-shadow: 0.05em 0 0 red, 
+        -0.025em -0.05em 0 green, 
+        0.025em 0.05em 0 blue,
+        0 0 2rem white;
+        @apply animate-flicker
+    }
+
+    /* Sections */
+
     .section {
-        @apply relative inline-block text-center hidden opacity-0 p-4 bg-secondary 
-        border-white border-2 rounded-lg
+        @apply relative text-center hidden p-4 bg-secondary 
+        border-2 rounded-lg shadow-highlight opacity-0
+    }
+
+    .section-title {
+        text-shadow: 0.05em 0 0 red, 
+        -0.025em -0.05em 0 green, 
+        0.025em 0.05em 0 blue,
+        0 0 2rem white;
+        @apply text-6xl w-full border-primary border-2 rounded-lg 
+        mb-4 p-4 shadow-primary animate-flicker
     }
 
     .left-slide {
@@ -38,20 +53,81 @@
     }
 
     .show {
-        @apply opacity-100 translate-x-0
-    }
-
-    .section-title {
-        @apply text-6xl w-full border-white border-2 rounded-lg mb-4 p-4
+        @apply translate-x-0 opacity-100
     }
 
     .section-hash {
         @apply absolute -top-36 h-36
     }
 
+    /* About Me */
+
+    .cover-image {
+        @apply hidden
+    }
+
+    .shift-image-btn {
+        @apply px-5 cursor-pointer h-full flex items-center
+        transition-all duration-200
+    }
+
+    .shift-image-btn:hover {
+        @apply bg-primary
+    }
+
+    /* Experience */
+
+    .exp {
+        @apply flex flex-col items-start border-highlight border-2
+        p-4 rounded-lg
+    }
+
+    .exp-diagram {
+        @apply flex items-center gap-4 mb-4
+    }
+
+    .exp-left {
+        @apply flex flex-col items-start
+    }
+
+    .exp-right {
+        @apply w-80 flex flex-col gap-4 text-left text-sm 
+        border-primary border-2 p-4 rounded-lg
+    }
+
+    .exp-image {
+        @apply w-72
+    }
+
+    .exp-title {
+        @apply text-xl
+    }
+
+    .exp-time {
+        @apply italic
+    }
+
+    .exp-pos {
+        @apply text-xl underline
+    }
+
+    .connector {
+        @apply flex items-center
+    }
+
+    .connector-circle {
+        @apply rounded-full h-6 w-6 bg-highlight shadow-highlight
+    }
+
+    .connector-rect {
+        @apply w-80 h-2 bg-highlight shadow-highlight
+    }
+
+    /* Projects */
+
     .project {
         @apply max-w-128 flex flex-col items-center text-2xl 
-        border-white border-2 rounded-lg relative z-10
+        border-2 rounded-lg relative z-10
     }
 
     .project:hover {
@@ -59,38 +135,28 @@
         transition-all duration-200
     }
 
-    .project:hover .project-title {
-        @apply bg-primary    
-    }
-
-    .project:hover .project-description {
-        @apply opacity-100
-    }
-
     .project-title {
-        @apply w-full border-b-2 text-3xl p-4
+        @apply w-full border-b-2 text-2xl p-4
         transition-all duration-200
     }
 
     .project-description {
         @apply text-lg p-4 absolute bottom-0
         bg-secondary opacity-0 transition-opacity 
-        duration-200
+        duration-200 border-t-2 border-t-primary
     }
 
-    .rain {
-        position: absolute;
-        background-color: #9614d0;
-        width: 2px;
-        height: 50px;
-        animation: animate-rain 0.5s linear infinite;
+    .project:hover .project-title {
+        @apply bg-primary border-b-primary
     }
 
-    @keyframes animate-rain {
-        0% {transform: translateY(-50px);}
-        100% {
-            transform: translateY(calc(100vh + 50px)); 
-            opacity: 0;
-        }
+    .project:hover .project-description {
+        @apply opacity-100
+    }
+
+    /* Contact Me */
+
+    .form-area {
+        @apply p-2 bg-secondary rounded-lg border-highlight border-2
     }
 }

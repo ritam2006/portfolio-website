@@ -7,12 +7,15 @@
   <script src="./script.js" defer></script>
   <script src="https://kit.fontawesome.com/071fe13fd0.js" crossorigin="anonymous"></script>
 </head>
-<body class="font-serif bg-black text-white overflow-x-hidden">
-    <nav class="sticky top-0 z-50 flex justify-between p-4 bg-secondary border-white border-b-2 text-3xl">
-        <div class="space-x-2">
+<body class="bg-black text-white overflow-x-hidden">
+    <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4 bg-secondary border-b-2 
+        text-3xl border-primary shadow-primary">
+        <div class="space-x-2 text-2xl">
             <a href="#">Home</a>
             <a href="#about-me">About Me</a>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
+            <a href="#contact-me">Contact Me</a>
         </div>
         <div class="space-x-2">
             <a class="fa-brands fa-instagram hover:text-instagram" target="_blank" href="https://www.instagram.com/ritamz.ico/"></a>
@@ -20,34 +23,35 @@
             <a class="fa-brands fa-github hover:text-github" target="_blank" href="https://github.com/ritam2006"></a>
         </div>
     </nav>
-    <div id="rain-container" class="fixed w-screen h-screen"></div>
+    <div id="rain-container" class="fixed w-screen h-screen -z-20"></div>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
-        <div class="text-8xl text-center m-56">
-            <p id="something" class="p-10 block title-text">Something's off...</p>
-            <p id="better" class="hidden p-10 title-text">That's better</p>
-            <p id="full-name" class="hidden p-10 title-text">Ritam Chakraborty</p>
+        <div id="line" class="hidden absolute border-x-2 w-40 h-full -z-10 bg-secondary 
+            shadow-highlight">
+            <div id="line-deco" class="absolute w-1/6 h-full left-1/2 -translate-x-1/2 
+                bg-highlight blur-md shadow-highlight"></div>
+        </div>
+        <div class="text-7xl text-center m-56">
+            <p id="something" class="block title-text">Something's off...</p>
+            <p id="better" class="hidden title-text">That's better</p>
+            <div id="full-name" class="hidden title-text"><p id="full-name-text">Ritam Chakraborty</p></div>
         </div>
         <div id="about-me-div" class="section left-slide">
             <div id="about-me" class="section-hash"></div>
             <h1 class="section-title">About Me</h1>
             <div class="flex gap-4">
-                <div class="relative flex text-4xl items-center border-white border-2 rounded-lg">
+                <div class="relative flex text-4xl items-center border-2 rounded-lg">
                     <p id="cover-index-display" class="absolute bottom-0 left-1/2 -translate-x-1/2 
-                        text-lg w-20 bg-secondary border-white border-2 border-b-0 p-2">1/3</p>
-                    <a id="move-left" class="shift-image-btn" onclick="move_slide(-1)">
+                        text-lg w-20 bg-secondary border-2 border-b-0 p-2">1/3</p>
+                    <a id="move-left" class="shift-image-btn border-r-2" onclick="move_slide(-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </a>
                         <div class="w-80" id="carousel">
-                            <img class="cover-image fade" src="../lib/img/ritam-1.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-2.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-3.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-4.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-5.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-6.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-7.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/ritam-8.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/me/ritam-1.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/me/ritam-2.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/me/ritam-3.jpg" alt="">
+                            <img class="cover-image fade" src="../lib/img/me/ritam-4.jpg" alt="">
                         </div>
-                    <a id="move-right" class="shift-image-btn" onclick="move_slide(1)">
+                    <a id="move-right" class="shift-image-btn border-l-2" onclick="move_slide(1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
                 </div>
@@ -84,14 +88,86 @@
                 </div>
             </div>
         </div>
-        <div id="project-div" class="section right-slide">
+        <div class="section right-slide">
+            <div id="experience" class="section-hash"></div>
+            <h1 class="section-title">Experience</h1>
+            <div class="flex flex-col gap-8 p-4">
+                <div class="exp">
+                    <div class="exp-diagram">
+                        <div class="exp-left">
+                            <img class="exp-image" src="../lib/img/experiences/seb.png" alt="">
+                        </div>
+                        <div class="connector">
+                            <div class="connector-circle"></div>
+                            <div class="connector-rect"></div>
+                            <div class="connector-circle"></div>
+                        </div>
+                        <div class="exp-right">
+                            <p class="exp-pos">Simulations Team Member</p>
+                            <p>I improved wind speed sampling technique for rocket launching simulations
+                                through formulating linear regression models by feasable generalized least squares, 
+                                allowing me to predict wind speeds at different altitudes. I migrated this new technique
+                                a Java simulation engine to run hundreds of these more advanced simulations per second.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="exp-title">Space Enterprise at Berkeley</p>
+                    <p class="exp-time">09/2024-Current</p>
+                </div>
+                <div class="exp">
+                    <div class="exp-diagram">
+                        <div class="exp-left">
+                            <img class="exp-image" src="../lib/img/experiences/veritasai.png" alt="">
+                        </div>
+                        <div class="connector">
+                            <div class="connector-circle"></div>
+                            <div class="connector-rect"></div>
+                            <div class="connector-circle"></div>
+                        </div>
+                        <div class="exp-right">
+                            <p class="exp-pos">Independent Researcher</p>
+                            <p>
+                               I preprocessed synthetic images of medicine packages and trained various image classification models on them. 
+                               I then compared the efficacies between a CNN and other common machine learning classifiers. I published my
+                               methodology and recommendations for future implementation in NHSJS through the VeritasAI research program.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="exp-title">Veritas AI</p>
+                    <p class="exp-time">07/2023-07/2024</p>
+                </div>
+                <div class="exp">
+                    <div class="exp-diagram">
+                        <div class="exp-left">
+                            <img class="exp-image" src="../lib/img/experiences/bambuser.png" alt="">  
+                        </div>
+                        <div class="connector">
+                            <div class="connector-circle"></div>
+                            <div class="connector-rect"></div>
+                            <div class="connector-circle"></div>
+                        </div>
+                        <div class="exp-right">
+                            <p class="exp-pos">Project Management Intern</p>
+                            <p>
+                                I consulted marketers to determine new features to implement. I developed a distribution 
+                                plan and product announcements for Bambuser's new “Virtual Try-On” feature. Finally, I 
+                                pioneered a team to improve Bambuser’s internal communication infrastructure for 150+ employees.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="exp-title">Bambuser</p>
+                    <p class="exp-time">06/2022-06/2023</p>
+                </div>
+            </div>
+        </div>
+        <div id="project-div" class="section left-slide">
             <div id="projects" class="section-hash"></div>
             <h1 class="section-title">Projects</h1>
             <div class="grid grid-cols-2 gap-8">
                 <a target="_blank" href="https://github.com/ritam2006/California-Housing-Price-Prediction">
                     <div class="project">
                         <p class="project-title">California House Price Prediction</p>
-                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <img src="../lib/img/projects/chpp-logo.png" alt="">
                         <p class="project-description">
                             I created a hyperparamater tuned Random Forest model that 
                             was trained on over 20,000 houses to predict housing price 
@@ -116,7 +192,7 @@
                 <a target="_blank" href="https://iams.skparab1.com/">
                     <div class="project">
                         <p class="project-title">R<sup>2</sup> Visualizer</p>
-                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <img src="../lib/img/project-previews/r-squared.png" alt="">
                         <p class="project-description">
                             I helped develop an educational website that demonstrates
                             the calculation for R squared in statistics. I made
@@ -128,7 +204,7 @@
                 <a target="_blank" href="https://github.com/ritam2006/Uno">
                     <div class="project">
                         <p class="project-title">Uno</p>
-                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <img src="../lib/img/project-previews/uno.png" alt="">
                         <p class="project-description">
                             I remade the card game Uno in Java with a GUI, game mechanics,
                             and custom animations. I constructed a local server from scratch 
@@ -138,6 +214,26 @@
                     </div>
                 </a>
             </div>
+        </div>
+        <div class="section right-slide">
+            <div id="contact-me" class="section-hash"></div>
+            <h1 class="section-title">Contact Me</h1>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <div class="flex flex-col gap-4 w-256">
+                    <input type="hidden" name="access_key" value="576f047a-856a-4233-b2bc-c8a9bdf747c8">
+                    <div class="flex w-full gap-4">
+                        <input class="form-area flex-1" type="text" name="name" placeholder="Your Name" required>
+                        <input class="form-area flex-1" type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <textarea class="form-area" name="message" placeholder="Your Message" required></textarea>
+                    <button id="submit-contact" class="text-2xl rounded-lg p-2 border-2 transition-all duration-200
+                        hover:bg-primary border-primary: bg-secondary border-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="section w-full rounded-none border-0 border-t-2 animate-none">
+            <h1 class="section-title">Special Thanks</h1>
+            <p class="text-3xl">Special thanks to <a href="">@prod_agp</a> for the background music!</p>
         </div>
     </div>
 </body>

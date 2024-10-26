@@ -1,9 +1,11 @@
+const line = document.getElementById('line')
+
 const sections = document.querySelectorAll('.section')
 
 const rain_container = document.getElementById('rain-container')
 
 const carousel = document.getElementById('carousel')
-const cover_images = [...carousel.children].splice(0, 8)
+const cover_images = [...carousel.children]
 let cover_image_index = 0
 const move_left = document.getElementById('move-left')
 const move_right = document.getElementById('move-right')
@@ -13,8 +15,9 @@ const something_text =  document.getElementById('something')
 const better_text =  document.getElementById('better')
 const name_text =  document.getElementById('full-name')
 
-const projects =  document.getElementById('project-div')
-const about_me =  document.getElementById('about-me-div')
+const rain_audio = new Audio('../lib/aud/rain.mp3')
+const bg_music = new Audio('../lib/aud/bg-music.mp3')
+bg_music.loop = true
 
 function move_slide(move_by) {
     let new_index = cover_image_index + move_by
@@ -58,19 +61,20 @@ function initial_animation() {
     setTimeout(() => {
         something_text.style.display = 'none'
         rain()
+        rain_audio.play()
     }, 2000)
 
     setTimeout(() => {
         better_text.style.display = 'block'
-    }, 4000)
+    }, 6000)
 
     setTimeout(() => {
+        bg_music.play()
         better_text.style.display = 'none'
         name_text.style.display = 'block'
-
-        projects.style.display = 'block'
-        about_me.style.display = 'block'
-    }, 6000)
+        sections.forEach((section) => section.style.display = 'block')
+        line.style.display = 'block'
+    }, 8000)
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -103,9 +107,8 @@ const observer = new IntersectionObserver((entries) => {
     }
 }*/
 initial_animation()
-// projects.style.display = 'block'
-// about_me.style.display = 'block'
-//rain()
+// sections.forEach((section) => section.style.display = 'block')
+// rain()
 
-sections.forEach((el) => observer.observe(el))
+sections.forEach((section) => observer.observe(section))
 move_slide(0)
