@@ -41,7 +41,11 @@
         0.025em 0.05em 0 blue,
         0 0 2rem white;
         @apply text-6xl w-full border-primary border-2 rounded-lg 
-        mb-4 p-4 shadow-primary animate-flicker
+        mb-4 p-4 shadow-primary
+    }
+
+    .glitch {
+        @apply animate-flicker
     }
 
     .left-slide {

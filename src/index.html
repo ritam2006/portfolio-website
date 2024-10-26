@@ -8,8 +8,8 @@
   <script src="https://kit.fontawesome.com/071fe13fd0.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-    <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4 bg-secondary border-b-2 
-        text-3xl border-primary shadow-primary">
+    <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4 bg-secondary 
+        border-b-2 text-3xl border-primary shadow-primary">
         <div class="space-x-2 text-2xl">
             <a href="#">Home</a>
             <a href="#about-me">About Me</a>
@@ -18,54 +18,69 @@
             <a href="#contact-me">Contact Me</a>
         </div>
         <div class="space-x-2">
-            <a class="fa-brands fa-instagram hover:text-instagram" target="_blank" href="https://www.instagram.com/ritamz.ico/"></a>
-            <a class="fa-brands fa-linkedin hover:text-linkedin" target="_blank" href="https://www.linkedin.com/in/ritam-chakraborty-575204323/"></a>
-            <a class="fa-brands fa-github hover:text-github" target="_blank" href="https://github.com/ritam2006"></a>
+            <a class="fa-brands fa-instagram hover:text-instagram" target="_blank" 
+                href="https://www.instagram.com/ritamz.ico/"></a>
+            <a class="fa-brands fa-linkedin hover:text-linkedin" target="_blank" 
+                href="https://www.linkedin.com/in/ritam-chakraborty-575204323/"></a>
+            <a class="fa-brands fa-github hover:text-github" target="_blank" 
+                href="https://github.com/ritam2006"></a>
         </div>
     </nav>
     <div id="rain-container" class="fixed w-screen h-screen -z-20"></div>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
-        <div id="line" class="hidden absolute border-x-2 w-40 h-full -z-10 bg-secondary 
-            shadow-highlight">
+        <div id="line" class="hidden absolute border-x-2 w-40 h-full -z-10 
+            bg-secondary shadow-highlight">
             <div id="line-deco" class="absolute w-1/6 h-full left-1/2 -translate-x-1/2 
                 bg-highlight blur-md shadow-highlight"></div>
         </div>
         <div class="text-7xl text-center m-56">
             <p id="something" class="block title-text">Something's off...</p>
             <p id="better" class="hidden title-text">That's better</p>
-            <div id="full-name" class="hidden title-text"><p id="full-name-text">Ritam Chakraborty</p></div>
+            <div id="full-name" class="hidden title-text">
+                <p id="full-name-text">Ritam Chakraborty</p>
+            </div>
         </div>
         <div id="about-me-div" class="section left-slide">
             <div id="about-me" class="section-hash"></div>
             <h1 class="section-title">About Me</h1>
             <div class="flex gap-4">
                 <div class="relative flex text-4xl items-center border-2 rounded-lg">
-                    <p id="cover-index-display" class="absolute bottom-0 left-1/2 -translate-x-1/2 
-                        text-lg w-20 bg-secondary border-2 border-b-0 p-2">1/3</p>
-                    <a id="move-left" class="shift-image-btn border-r-2" onclick="move_slide(-1)">
+                    <p id="cover-index-display" class="absolute bottom-0 left-1/2 
+                        -translate-x-1/2 text-lg w-20 bg-secondary border-2 
+                        border-b-0 p-2">1/3</p>
+                    <a id="move-left" class="shift-image-btn border-r-2" 
+                        onclick="move_slide(-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </a>
                         <div class="w-80" id="carousel">
-                            <img class="cover-image fade" src="../lib/img/me/ritam-1.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/me/ritam-2.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/me/ritam-3.jpg" alt="">
-                            <img class="cover-image fade" src="../lib/img/me/ritam-4.jpg" alt="">
+                            <img class="cover-image fade" 
+                                src="../lib/img/me/ritam-1.jpg" alt="">
+                            <img class="cover-image fade" 
+                                src="../lib/img/me/ritam-2.jpg" alt="">
+                            <img class="cover-image fade" 
+                                src="../lib/img/me/ritam-3.jpg" alt="">
+                            <img class="cover-image fade" 
+                                src="../lib/img/me/ritam-4.jpg" alt="">
                         </div>
-                    <a id="move-right" class="shift-image-btn border-l-2" onclick="move_slide(1)">
+                    <a id="move-right" class="shift-image-btn border-l-2" 
+                        onclick="move_slide(1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
                 </div>
                 <div class="flex flex-col w-128 p-4 gap-2 text-left">
                     <p class="text-3xl">This is Ritam</p>
-                    <p class="text-lg">Hi, I'm Ritam! I am a college student in the Bay Area who is interested
-                        in data science and full-stack development.
+                    <p class="text-lg">Hi, I'm Ritam! I am a college student in the Bay 
+                        Area who is interested in data science and full-stack 
+                        development.
                     </p>
                     <ul class="list-disc list-inside">
                         <p>Education & Skills</p>
                         <li>
                             <i class="fa-solid fa-graduation-cap"></i> 
                             Data Science @ 
-                            <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg">UC Berkeley</span>
+                            <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg">
+                                UC Berkeley
+                            </span>
                         </li>
                         <li>
                             <i class="fa-solid fa-code"></i>
@@ -104,10 +119,12 @@
                         </div>
                         <div class="exp-right">
                             <p class="exp-pos">Simulations Team Member</p>
-                            <p>I improved wind speed sampling technique for rocket launching simulations
-                                through formulating linear regression models by feasable generalized least squares, 
-                                allowing me to predict wind speeds at different altitudes. I migrated this new technique
-                                a Java simulation engine to run hundreds of these more advanced simulations per second.
+                            <p>I improved wind speed sampling technique for rocket 
+                                launching simulations through formulating linear regression 
+                                models by feasable generalized least squares, allowing me to 
+                                predict wind speeds at different altitudes. I migrated this 
+                                new technique a Java simulation engine to run hundreds of 
+                                these more advanced simulations per second.
                             </p>
                         </div>
                     </div>
@@ -127,9 +144,11 @@
                         <div class="exp-right">
                             <p class="exp-pos">Independent Researcher</p>
                             <p>
-                               I preprocessed synthetic images of medicine packages and trained various image classification models on them. 
-                               I then compared the efficacies between a CNN and other common machine learning classifiers. I published my
-                               methodology and recommendations for future implementation in NHSJS through the VeritasAI research program.
+                               I preprocessed synthetic images of medicine packages and trained various 
+                               image classification models on them. I then compared the efficacies 
+                               between a CNN and other common machine learning classifiers. I published my
+                               methodology and recommendations for future implementation in NHSJS through 
+                               the VeritasAI research program.
                             </p>
                         </div>
                     </div>
@@ -149,9 +168,11 @@
                         <div class="exp-right">
                             <p class="exp-pos">Project Management Intern</p>
                             <p>
-                                I consulted marketers to determine new features to implement. I developed a distribution 
-                                plan and product announcements for Bambuser's new “Virtual Try-On” feature. Finally, I 
-                                pioneered a team to improve Bambuser’s internal communication infrastructure for 150+ employees.
+                                I consulted marketers to determine new features to implement. 
+                                I developed a distribution plan and product announcements for 
+                                Bambuser's new “Virtual Try-On” feature. Finally, I pioneered a 
+                                team to improve Bambuser’s internal communication infrastructure 
+                                for 150+ employees.
                             </p>
                         </div>
                     </div>
@@ -179,20 +200,21 @@
                 </a>
                 <a target="_blank" href="https://www.youtube.com/watch?v=WePNs-G7puA">
                     <div class="project">
-                        <p class="project-title">X (Twitter) Hate Speech Detection</p>
-                        <img src="../lib/img/ritam-8.jpg" alt="">
+                        <p class="project-title">Safe Speech</p>
+                        <img src="../lib/img/projects/safe-speech-logo.png" alt="">
                         <p class="project-description">
                             I used Tensorflow to make a neural network to detect whether
                             X posts should be removed for containing hate speech. I executed
-                            a sentiment analysis on over 32,000 posts. Finally, I contrasted
-                            this deep learning approach with a logistic regression model.
+                            a sentiment analysis on over 32,000 posts. I created a website
+                            that allows users to determine if their posts would be flagged
+                            for being hate speech.
                         </p>
                     </div>
                 </a>
                 <a target="_blank" href="https://iams.skparab1.com/">
                     <div class="project">
                         <p class="project-title">R<sup>2</sup> Visualizer</p>
-                        <img src="../lib/img/project-previews/r-squared.png" alt="">
+                        <img src="../lib/img/projects/r-squared-logo.png" alt="">
                         <p class="project-description">
                             I helped develop an educational website that demonstrates
                             the calculation for R squared in statistics. I made
@@ -204,7 +226,7 @@
                 <a target="_blank" href="https://github.com/ritam2006/Uno">
                     <div class="project">
                         <p class="project-title">Uno</p>
-                        <img src="../lib/img/project-previews/uno.png" alt="">
+                        <img src="../lib/img/projects/uno-logo.png" alt="">
                         <p class="project-description">
                             I remade the card game Uno in Java with a GUI, game mechanics,
                             and custom animations. I constructed a local server from scratch 
@@ -222,18 +244,27 @@
                 <div class="flex flex-col gap-4 w-256">
                     <input type="hidden" name="access_key" value="576f047a-856a-4233-b2bc-c8a9bdf747c8">
                     <div class="flex w-full gap-4">
-                        <input class="form-area flex-1" type="text" name="name" placeholder="Your Name" required>
-                        <input class="form-area flex-1" type="email" name="email" placeholder="Your Email" required>
+                        <input class="form-area flex-1" type="text" name="name" 
+                        placeholder="Your Name" required>
+                        <input class="form-area flex-1" type="email" name="email" 
+                        placeholder="Your Email" required>
                     </div>
-                    <textarea class="form-area" name="message" placeholder="Your Message" required></textarea>
-                    <button id="submit-contact" class="text-2xl rounded-lg p-2 border-2 transition-all duration-200
-                        hover:bg-primary border-primary: bg-secondary border-primary" type="submit">Submit</button>
+                    <textarea class="form-area" name="message" placeholder="Your Message" 
+                        required>
+                    </textarea>
+                    <button id="submit-contact" class="text-2xl rounded-lg p-2 border-2 
+                        transition-all duration-200hover:bg-primary border-primary: 
+                        bg-secondary border-primary" type="submit">
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>
         <div class="section w-full rounded-none border-0 border-t-2 animate-none">
             <h1 class="section-title">Special Thanks</h1>
-            <p class="text-3xl">Special thanks to <a href="">@prod_agp</a> for the background music!</p>
+            <p class="text-3xl">Special thanks to <a href="">@prod_agp</a> 
+                for the background music!
+            </p>
         </div>
     </div>
 </body>

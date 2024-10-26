@@ -79,13 +79,16 @@ function initial_animation() {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry)
+        let title = entry.target.querySelector('.section-title')
+
         if (entry.isIntersecting) {
             entry.target.classList.add('show')
+            title.classList.add('glitch')
         } 
         
         else {
             entry.target.classList.remove('show')
+            title.classList.remove('glitch')
         }
     })
 })
