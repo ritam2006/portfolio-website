@@ -8,14 +8,17 @@
   <script src="https://kit.fontawesome.com/071fe13fd0.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-    <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4 bg-secondary 
-        border-b-2 text-3xl border-primary shadow-primary select-none">
+    <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4
+        border-b-2 text-3xl border-primary shadow-primary select-none bg-secondary">
         <div class="space-x-4 text-2xl">
-            <a href="#">Home</a>
-            <a href="#about-me">About Me</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact-me">Contact Me</a>
+            <div href="" class="cursor-pointer md:hidden" onclick="toggle_menu()">
+                <i id="menu-btn" class="fa-solid fa-bars"></i>
+            </div>
+            <a href="#" class="nav-item">Home</a>
+            <a href="#about-me" class="nav-item">About Me</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#contact-me" class="nav-item">Contact Me</a>
         </div>
         <div class="space-x-2">
             <a class="fa-brands fa-instagram" target="_blank" 
@@ -25,33 +28,41 @@
             <a class="fa-brands fa-github" target="_blank" 
                 href="https://github.com/ritam2006"></a>
         </div>
+        <div id="menu" class="hidden absolute top-full left-0 flex flex-col 
+            border-primary border-2 shadow-primary md:hidden" onclick="toggle_menu()">
+            <a href="#" class="menu-item">Home</a>
+            <a href="#about-me" class="menu-item">About Me</a>
+            <a href="#experience" class="menu-item">Experience</a>
+            <a href="#projects" class="menu-item">Projects</a>
+            <a href="#contact-me" class="menu-item">Contact Me</a>
+        </div>
     </nav>
     <div id="rain-container" class="fixed w-screen h-screen -z-20"></div>
+    <div class="fixed w-screen h-screen bg-black/40 -z-20"></div>
+    <div id="overlay" class="hidden fixed bg-black/50 w-screen h-screen z-10 md:hidden" 
+        onclick="toggle_menu()"></div>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
         <div id="line" class="absolute border-x-2 w-40 h-full -z-10 
             bg-secondary shadow-highlight">
             <div id="line-deco" class="absolute w-1/6 h-full left-1/2 -translate-x-1/2 
                 bg-highlight blur-md shadow-highlight"></div>
         </div>
-        <div class="text-7xl text-center m-56">
-            <div id="full-name" class="bg-secondary border-2 rounded-lg p-10 
-                shadow-highlight">
-                <p id="full-name-text" class="animate-flicker select-none">Ritam Chakraborty</p>
-            </div>
+        <div id="full-name" class="bg-secondary border-2 rounded-lg p-10 
+            shadow-highlight m-56 text-center text-4xl sm:text-7xl opacity-90">
+            <p id="full-name-text" class="text-effect select-none">Ritam Chakraborty</p>
         </div>
         <div id="about-me-div" class="section left-slide">
             <div id="about-me" class="section-hash"></div>
-            <h1 class="section-title">About Me</h1>
-            <div class="flex gap-4">
-                <div class="relative flex text-4xl items-center border-2 rounded-lg">
-                    <p id="cover-index-display" class="absolute bottom-0 left-1/2 
-                        -translate-x-1/2 text-lg w-20 bg-secondary border-2 
-                        border-b-0 p-2">1/3</p>
+            <h1 class="section-title text-effect">About Me</h1>
+            <div class="flex gap-4 flex-col items-center lg:flex-row">
+                <div class="relative flex text-4xl border-2 rounded-lg overflow-hidden">
+                    <p id="cover-index-display" class="absolute bottom-2 left-1/2 
+                        -translate-x-1/2 bg-secondary border-2 text-sm w-20 p-1"></p>
                     <a id="move-left" class="shift-image-btn border-r-2" 
                         onclick="move_slide(-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </a>
-                        <div class="w-80" id="carousel">
+                        <div class="max-w-80 lg:w-80" id="carousel">
                             <img class="cover-image fade" 
                                 src="./lib/img/me/ritam-1.jpg" alt="">
                             <img class="cover-image fade" 
@@ -66,7 +77,7 @@
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
                 </div>
-                <div class="flex flex-col w-128 p-4 gap-2 text-left">
+                <div class="flex flex-col p-4 gap-2 text-left text-sm lg:text-base lg:w-3/5">
                     <p class="text-3xl">This is Ritam</p>
                     <p class="text-lg">Hi, I'm Ritam! I am a college student in the Bay 
                         Area who is interested in data science and full-stack 
@@ -76,7 +87,8 @@
                         <p>Education & Skills</p>
                         <li>
                             <i class="fa-solid fa-graduation-cap"></i> 
-                            Data Science @ 
+                            Data Science B.A. @ 
+                            <br class="sm:hidden">
                             <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg">
                                 UC Berkeley
                             </span>
@@ -92,11 +104,13 @@
                         <p class="mt-2">Fun Stuff</p> 
                         <li>
                             <i class="fa-solid fa-chess-pawn"></i>
-                            I play chess (2150 chess.com, 1850 USCF, 1750 FIDE)
+                            I play chess (2150 
+                            <a class="text-lime-500 underline" target="_blank" href="https://www.chess.com/member/mustardman06">chess.com</a>
+                            , 1850 USCF, 1750 FIDE)
                         </li>
                         <li>
                             <i class="fa-solid fa-music"></i>
-                            Top 3 Songs: Purple Rain, Ex-Factor, A Milli
+                            Top 3 Songs: <span class="text-primary">Purple Rain</span>, Ex-Factor, A Milli
                         </li>       
                     </ul>
                 </div>
@@ -104,7 +118,7 @@
         </div>
         <div class="section right-slide">
             <div id="experience" class="section-hash"></div>
-            <h1 class="section-title">Experience</h1>
+            <h1 class="section-title text-effect">Experience</h1>
             <div class="flex flex-col gap-8 p-4">
                 <div class="exp">
                     <div class="exp-diagram">
@@ -112,13 +126,14 @@
                             <img class="exp-image" src="./lib/img/experiences/seb.png" alt="">
                         </div>
                         <div class="connector">
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-left"></div>
                             <div class="connector-rect"></div>
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-right"></div>
                         </div>
                         <div class="exp-right">
                             <p class="exp-pos">Simulations Team Member</p>
-                            <p>I improved wind speed sampling technique for rocket 
+                            <p>
+                                I improved wind speed sampling technique for rocket 
                                 launching simulations through formulating linear regression 
                                 models by feasable generalized least squares, allowing me to 
                                 predict wind speeds at different altitudes. I migrated this 
@@ -129,6 +144,17 @@
                     </div>
                     <p class="exp-title">Space Enterprise at Berkeley</p>
                     <p class="exp-time">09/2024-Current</p>
+                    <div class="exp-mobile-desc">
+                        <p class="exp-pos">Simulations Team Member</p>
+                        <p>
+                            I improved wind speed sampling technique for rocket 
+                            launching simulations through formulating linear regression 
+                            models by feasable generalized least squares, allowing me to 
+                            predict wind speeds at different altitudes. I migrated this 
+                            new technique a Java simulation engine to run hundreds of 
+                            these more advanced simulations per second.
+                        </p>
+                    </div>
                 </div>
                 <div class="exp">
                     <div class="exp-diagram">
@@ -136,9 +162,9 @@
                             <img class="exp-image" src="./lib/img/experiences/veritasai.png" alt="">
                         </div>
                         <div class="connector">
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-left"></div>
                             <div class="connector-rect"></div>
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-right"></div>
                         </div>
                         <div class="exp-right">
                             <p class="exp-pos">Independent Researcher</p>
@@ -153,6 +179,16 @@
                     </div>
                     <p class="exp-title">Veritas AI</p>
                     <p class="exp-time">07/2023-07/2024</p>
+                    <div class="exp-mobile-desc">
+                        <p class="exp-pos">Independent Researcher</p>
+                        <p>
+                            I preprocessed synthetic images of medicine packages and trained various 
+                            image classification models on them. I then compared the efficacies 
+                            between a CNN and other common machine learning classifiers. I published my
+                            methodology and recommendations for future implementation in NHSJS through 
+                            the VeritasAI research program.
+                        </div>
+                     </p>
                 </div>
                 <div class="exp">
                     <div class="exp-diagram">
@@ -160,9 +196,9 @@
                             <img class="exp-image" src="./lib/img/experiences/bambuser.png" alt="">  
                         </div>
                         <div class="connector">
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-left"></div>
                             <div class="connector-rect"></div>
-                            <div class="connector-circle"></div>
+                            <div class="connector-circle circle-right"></div>
                         </div>
                         <div class="exp-right">
                             <p class="exp-pos">Project Management Intern</p>
@@ -177,16 +213,26 @@
                     </div>
                     <p class="exp-title">Bambuser</p>
                     <p class="exp-time">06/2022-06/2023</p>
+                    <div class="exp-mobile-desc">
+                        <p class="exp-pos">Project Management Intern</p>
+                        <p>
+                            I consulted marketers to determine new features to implement. 
+                            I developed a distribution plan and product announcements for 
+                            Bambuser's new “Virtual Try-On” feature. Finally, I pioneered a 
+                            team to improve Bambuser’s internal communication infrastructure 
+                            for 150+ employees.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="project-div" class="section left-slide">
             <div id="projects" class="section-hash"></div>
-            <h1 class="section-title">Projects</h1>
-            <div class="grid grid-cols-2 gap-8">
+            <h1 class="section-title text-effect">Projects</h1>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
                 <a target="_blank" href="https://github.com/ritam2006/California-Housing-Price-Prediction">
                     <div class="project">
-                        <p class="project-title">California House Price Prediction</p>
+                        <p class="project-title text-xlg md:text-base lg:text-2xl">California House Price Predictor</p>
                         <img src="./lib/img/projects/chpp-logo.png" alt="">
                         <p class="project-description">
                             I created a hyperparamater tuned Random Forest model that 
@@ -238,11 +284,11 @@
         </div>
         <div class="section right-slide">
             <div id="contact-me" class="section-hash"></div>
-            <h1 class="section-title">Contact Me</h1>
+            <h1 class="section-title text-effect">Contact Me</h1>
             <form action="https://api.web3forms.com/submit" method="POST">
-                <div class="flex flex-col gap-4 w-256">
+                <div class="flex flex-col gap-4">
                     <input type="hidden" name="access_key" value="576f047a-856a-4233-b2bc-c8a9bdf747c8">
-                    <div class="flex w-full gap-4">
+                    <div class="flex flex-col w-full gap-4 md:flex-row">
                         <input class="form-area flex-1" type="text" name="name" 
                         placeholder="Your Name" required>
                         <input class="form-area flex-1" type="email" name="email" 
@@ -259,7 +305,7 @@
             </form>
         </div>
         <div class="section w-full rounded-none border-0 border-t-2 animate-none">
-            <h1 class="section-title">Special Thanks</h1>
+            <h1 class="hidden section-title text-effect">Thanks for checking it out!</h1>
         </div>
     </div>
 </body>

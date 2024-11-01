@@ -11,6 +11,10 @@ const move_left = document.getElementById('move-left')
 const move_right = document.getElementById('move-right')
 const cover_index_display = document.getElementById('cover-index-display')
 
+const menu = document.getElementById('menu')
+const menu_btn = document.getElementById('menu-btn')
+const overlay = document.getElementById('overlay')
+
 function move_slide(move_by) {
     let new_index = cover_image_index + move_by
     new_index === -1 ? new_index = cover_images.length - 1 : null
@@ -23,6 +27,14 @@ function move_slide(move_by) {
     }
 
     cover_index_display.innerHTML = cover_image_index + 1 + '/' + cover_images.length
+}
+
+function toggle_menu() { 
+    menu.classList.toggle('hidden')
+    overlay.classList.toggle('hidden')
+    menu_btn.classList.toggle('fa-bars')
+    menu_btn.classList.toggle('fa-xmark')
+    document.body.classList.toggle('overflow-hidden')
 }
 
 function rain() {
@@ -53,12 +65,10 @@ const observer = new IntersectionObserver((entries) => {
 
         if (entry.isIntersecting) {
             entry.target.classList.add('show')
-            title.classList.add('glitch')
         } 
         
         else {
             entry.target.classList.remove('show')
-            title.classList.remove('glitch')
         }
     })
 })

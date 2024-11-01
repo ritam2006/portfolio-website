@@ -10,11 +10,19 @@
         @apply border-highlight font-poppins scroll-smooth
     }
 
+    .nav-item {
+        @apply hidden md:text-xl md:inline-flex lg:text-2xl
+    }
+
+    .menu-item {
+        @apply bg-secondary p-4
+    }
+
     .rain {
         @apply absolute bg-primary h-16 animate-rain
     }
 
-    #full-name-text {
+    .text-effect {
         text-shadow: 0.05em 0 0 red, 
         -0.025em -0.05em 0 green, 
         0.025em 0.05em 0 blue,
@@ -26,20 +34,12 @@
 
     .section {
         @apply relative text-center p-4 bg-secondary 
-        border-2 rounded-lg shadow-highlight opacity-0
+        border-2 rounded-lg shadow-highlight opacity-0 w-4/5
     }
 
     .section-title {
-        text-shadow: 0.05em 0 0 red, 
-        -0.025em -0.05em 0 green, 
-        0.025em 0.05em 0 blue,
-        0 0 2rem white;
-        @apply text-6xl w-full border-primary border-2 rounded-lg 
-        mb-4 p-4 shadow-primary select-none
-    }
-
-    .glitch {
-        @apply animate-flicker
+        @apply w-full border-primary border-2 rounded-lg 
+        mb-4 p-4 shadow-primary select-none text-4xl sm:text-6xl
     }
 
     .left-slide {
@@ -51,11 +51,11 @@
     }
 
     .show {
-        @apply translate-x-0 opacity-100
+        @apply translate-x-0 opacity-90
     }
 
     .section-hash {
-        @apply absolute -top-36 h-36
+        @apply absolute -top-28 h-28
     }
 
     /* About Me */
@@ -65,8 +65,8 @@
     }
 
     .shift-image-btn {
-        @apply px-5 cursor-pointer h-full flex items-center
-        transition-all duration-200
+        @apply px-2 md:px-4 cursor-pointer max-h-80 flex
+        transition-all duration-200 items-center
     }
 
     .shift-image-btn:hover {
@@ -77,11 +77,11 @@
 
     .exp {
         @apply flex flex-col items-start border-highlight border-2
-        p-4 rounded-lg
+        p-4 rounded-lg text-left
     }
 
     .exp-diagram {
-        @apply flex items-center gap-4 mb-4
+        @apply flex justify-between gap-4 mb-4 w-full
     }
 
     .exp-left {
@@ -89,8 +89,8 @@
     }
 
     .exp-right {
-        @apply w-80 flex flex-col gap-4 text-left text-sm 
-        border-primary border-2 p-4 rounded-lg
+        @apply w-80 flex-col gap-4 text-left text-sm 
+        border-primary shadow-primary border-2 p-4 rounded-lg hidden lg:flex
     }
 
     .exp-image {
@@ -105,27 +105,40 @@
         @apply italic
     }
 
+    .exp-mobile-desc {
+        @apply text-base mt-4 flex flex-col gap-2 lg:hidden
+    }
+
     .exp-pos {
         @apply text-xl underline
     }
 
     .connector {
-        @apply flex items-center
+        @apply flex-1 items-center hidden relative lg:flex mx-4
     }
 
     .connector-circle {
         @apply rounded-full h-6 w-6 bg-highlight shadow-highlight
+        absolute 
+    }
+
+    .circle-left {
+        @apply left-0 -translate-x-1/2
+    }
+
+    .circle-right {
+        @apply right-0 translate-x-1/2
     }
 
     .connector-rect {
-        @apply w-80 h-2 bg-highlight shadow-highlight
+        @apply h-2 bg-highlight shadow-highlight flex-1
     }
 
     /* Projects */
 
     .project {
-        @apply max-w-128 flex flex-col items-center text-2xl 
-        border-2 rounded-lg relative z-10
+        @apply flex flex-col items-center text-2xl 
+        border-2 rounded-lg relative z-10 overflow-hidden
     }
 
     .project:hover {
@@ -139,9 +152,10 @@
     }
 
     .project-description {
-        @apply text-lg p-4 absolute bottom-0
+        @apply p-4 absolute bottom-0
         bg-secondary opacity-0 transition-opacity 
         duration-200 border-t-2 border-t-primary
+        text-sm sm:text-lg md:text-base lg:text-xl
     }
 
     .project:hover .project-title {
@@ -155,6 +169,7 @@
     /* Contact Me */
 
     .form-area {
-        @apply p-2 bg-secondary rounded-lg border-highlight border-2
+        @apply p-2 bg-secondary rounded-lg border-highlight 
+        border-2 w-full text-sm sm:text-base md:text-lg
     }
 }
