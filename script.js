@@ -59,6 +59,16 @@ function rain() {
     }
 }
 
+function gold_rain() {
+    const rain_divs = document.querySelectorAll('.rain')
+    rain_divs.forEach((rain_div) => rain_div.classList.add('bg-cali_gold'))
+}
+
+function purple_rain() {
+    const rain_divs = document.querySelectorAll('.rain')
+    rain_divs.forEach((rain_div) => rain_div.classList.remove('bg-cali_gold'))
+}
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         let title = entry.target.querySelector('.section-title')

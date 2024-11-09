@@ -1,8 +1,11 @@
 <!doctype html>
 <html>
 <head>
+  <title>Ritam's Portfolio Website</title>
+  <link rel="icon" type="image/x-icon" href="lib/img/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ritam's portfolio website will give you an insight into his skills, interests and work.">
   <link href="./output.css" rel="stylesheet">
   <script src="./script.js" defer></script>
   <script src="https://kit.fontawesome.com/071fe13fd0.js" crossorigin="anonymous"></script>
@@ -41,6 +44,11 @@
     <div class="fixed w-screen h-screen bg-black/40 -z-20"></div>
     <div id="overlay" class="hidden fixed bg-black/50 w-screen h-screen z-10 md:hidden" 
         onclick="toggle_menu()"></div>
+    <a class="fixed right-4 bottom-4 z-20 px-8 py-4 text-2xl bg-secondary border-2
+        border-primary shadow-primary rounded-lg flex gap-3 items-center cursor-pointer"
+        href="/lib/Ritam_Chakraborty_Resume.pdf" download>
+        Resume<i class="fa-solid fa-file-arrow-down"></i>
+    </a>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
         <div id="line" class="absolute border-x-2 w-40 h-full -z-10 
             bg-secondary shadow-highlight">
@@ -48,7 +56,7 @@
                 bg-highlight blur-md shadow-highlight"></div>
         </div>
         <div id="full-name" class="bg-secondary border-2 rounded-lg p-10 
-            shadow-highlight m-56 text-center text-4xl sm:text-7xl opacity-90">
+            shadow-highlight m-56 text-center text-6xl sm:text-7xl opacity-90">
             <p id="full-name-text" class="text-effect select-none">Ritam Chakraborty</p>
         </div>
         <div id="about-me-div" class="section left-slide">
@@ -91,7 +99,8 @@
                             <i class="fa-solid fa-graduation-cap"></i> 
                             Data Science B.A. @ 
                             <br class="sm:hidden">
-                            <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg">
+                            <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg cursor-pointer"
+                                onclick="gold_rain()">
                                 UC Berkeley
                             </span>
                         </li>
@@ -107,12 +116,15 @@
                         <li>
                             <i class="fa-solid fa-chess-pawn"></i>
                             I play chess (2150 
-                            <a class="text-lime-500 underline" target="_blank" href="https://www.chess.com/member/mustardman06">chess.com</a>
+                            <a class="underline" target="_blank" href="https://www.chess.com/member/mustardman06">chess.com</a>
                             , 1850 USCF, 1750 FIDE)
                         </li>
                         <li>
                             <i class="fa-solid fa-music"></i>
-                            Top 3 Songs: <span class="text-primary">Purple Rain</span>, Ex-Factor, A Milli
+                            Top 3 Songs: 
+                            <span class="bg-primary px-2 rounded-lg cursor-pointer" onclick="purple_rain()">
+                                Purple Rain</span>, 
+                            Ex-Factor, A Milli
                         </li>       
                     </ul>
                 </div>
