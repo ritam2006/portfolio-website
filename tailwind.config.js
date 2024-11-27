@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#9614d0',
-        secondary: '#11001c',
-        highlight: '#ff10f0',
+        primary: 'var(--primary-color)',
+        secondary: 'var(--secondary-color)',
+        highlight: 'var(--highlight)',
         berkeley_blue: '#002676',
         cali_gold: '#fdb515',
       },
@@ -34,7 +34,7 @@ module.exports = {
         }
       },
       animation: {
-        'rain': 'rain 0.75s linear infinite',
+        'rain': 'rain 1.25s linear infinite',
         'flicker': 'flicker 3s infinite' 
       },
       boxShadow: {

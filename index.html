@@ -14,7 +14,7 @@
     <nav id="nav" class="sticky top-0 z-50 flex justify-between p-4
         border-b-2 text-3xl border-primary shadow-primary select-none bg-secondary">
         <div class="space-x-4 text-2xl">
-            <div href="" class="cursor-pointer md:hidden" onclick="toggle_menu()">
+            <div href="" class="cursor-pointer md:hidden" onclick="toggleMenu()">
                 <i id="menu-btn" class="fa-solid fa-bars"></i>
             </div>
             <a href="#" class="nav-item">Home</a>
@@ -32,7 +32,7 @@
                 href="https://github.com/ritam2006"></a>
         </div>
         <div id="menu" class="hidden absolute top-full left-0 flex flex-col 
-            border-primary border-2 shadow-primary md:hidden" onclick="toggle_menu()">
+            border-primary border-2 shadow-primary md:hidden" onclick="toggleMenu()">
             <a href="#" class="menu-item">Home</a>
             <a href="#about-me" class="menu-item">About Me</a>
             <a href="#experience" class="menu-item">Experience</a>
@@ -40,16 +40,16 @@
             <a href="#contact-me" class="menu-item">Contact Me</a>
         </div>
     </nav>
-    <div id="rain-container" class="fixed w-screen h-screen -z-20"></div>
-    <div class="fixed w-screen h-screen bg-black/40 -z-20"></div>
     <div id="overlay" class="hidden fixed bg-black/50 w-screen h-screen z-10 md:hidden" 
-        onclick="toggle_menu()"></div>
-    <a class="fixed right-4 bottom-4 z-20 px-8 py-4 text-2xl bg-secondary border-2
+        onclick="toggleMenu()"></div>
+    <a class="fixed right-4 bottom-4 z-50 px-8 py-4 text-2xl bg-secondary border-2
         border-primary shadow-primary rounded-lg flex gap-3 items-center cursor-pointer"
         href="/lib/Ritam_Chakraborty_Resume.pdf" download>
         Resume<i class="fa-solid fa-file-arrow-down"></i>
     </a>
     <div id="main-content" class="relative flex flex-col items-center gap-256">
+        <div id="rain-container" class="fixed w-screen h-screen pointer-events-none z-40"></div>
+        <div class="fixed w-screen h-screen bg-black/40 -z-20"></div>
         <div id="line" class="absolute border-x-2 w-40 h-full -z-10 
             bg-secondary shadow-highlight">
             <div id="line-deco" class="absolute w-1/6 h-full left-1/2 -translate-x-1/2 
@@ -67,7 +67,7 @@
                     <p id="cover-index-display" class="absolute bottom-2 left-1/2 
                         -translate-x-1/2 bg-secondary border-2 text-sm w-20 p-1"></p>
                     <a id="move-left" class="shift-image-btn border-r-2" 
-                        onclick="move_slide(-1)">
+                        onclick="moveSlide(-1)">
                         <i class="fa-solid fa-angle-left"></i>
                     </a>
                         <div class="max-w-80 lg:w-80" id="carousel">
@@ -83,7 +83,7 @@
                                 src="./lib/img/me/ritam-0.jpg" alt="">
                         </div>
                     <a id="move-right" class="shift-image-btn border-l-2" 
-                        onclick="move_slide(1)">
+                        onclick="moveSlide(1)">
                         <i class="fa-solid fa-angle-right"></i>
                     </a>
                 </div>
@@ -100,7 +100,7 @@
                             Data Science B.A. @ 
                             <br class="sm:hidden">
                             <span class="bg-cali_gold text-berkeley_blue px-2 rounded-lg cursor-pointer"
-                                onclick="gold_rain()">
+                                onclick="goldRain()">
                                 UC Berkeley
                             </span>
                         </li>
@@ -122,7 +122,7 @@
                         <li>
                             <i class="fa-solid fa-music"></i>
                             Top 3 Songs: 
-                            <span class="bg-primary px-2 rounded-lg cursor-pointer" onclick="purple_rain()">
+                            <span class="bg-[#9614d0] px-2 rounded-lg cursor-pointer" onclick="purpleRain()">
                                 Purple Rain</span>, 
                             Ex-Factor, A Milli
                         </li>       
@@ -318,7 +318,8 @@
                 </div>
             </form>
         </div>
-        <div class="section w-full rounded-none border-0 border-t-2 animate-none">
+        <div class="section w-full rounded-none border-0 border-t-2 animate-none 
+            border-primary shadow-primary z-40 opacity-100">
             <h1 class="hidden section-title text-effect">Thanks for checking it out!</h1>
         </div>
     </div>

@@ -5,9 +5,15 @@
 @tailwind utilities;
 
 @layer components {
+    :root {
+        --primary-color:#9614d0;
+        --secondary-color:#11001c;
+        --highlight:#ff10f0;
+    }
+
     * {
         text-shadow: 0 0 2rem white;
-        @apply border-highlight font-poppins scroll-smooth
+        @apply border-highlight font-poppins scroll-smooth 
     }
 
     .nav-item {
@@ -19,7 +25,9 @@
     }
 
     .rain {
-        @apply absolute bg-primary h-16 animate-rain
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        @apply absolute text-primary h-16 animate-rain z-40
     }
 
     .text-effect {
