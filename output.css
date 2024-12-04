@@ -569,6 +569,10 @@ video {
   font-family: Poppins, sans-serif
 }
 
+body, html{
+  overflow-x: hidden;
+}
+
 .nav-item{
   display: none;
 }
